@@ -141,7 +141,7 @@ public @interface SpringBootApplication {...}
 
 这是spring 自动装配的原理 ，我们这里暂不做解析。useDefaultFilters 再使用includeFilters时，因该设置为false,否则你的其他使用的@Service、@Component、@Controller等其他你不想扫描到的类也会被扫描进去。
 
-这就是整个实现按配置来运行我们项目的重要思路，代码我放在了[github](http://github.com/fispersonl/beanFilter)上面，需要的小伙伴可以去看一看。
+这就是整个实现按配置来运行我们项目的重要思路，代码我放在了[github](https://github.com/firstpersonl/beanFilter)上面，需要的小伙伴可以去看一看。
 
 
 第一次写文章，思路有些乱，请大家谅解。
