@@ -1,0 +1,45 @@
+buildscript {
+	ext {
+		springBootVersion = '2.2.1.RELEASE'
+	}
+	repositories {
+		maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+allprojects {
+	group = 'com.itkingk.springBean'
+	version = '0.0.1-SNAPSHOT'
+	apply plugin: 'idea'
+}
+
+
+subprojects {
+	apply plugin: 'java'
+	repositories {
+		maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+
+	}
+	ext {//依赖版本
+		springBootVersion = "2.2.1.RELEASE"
+	}
+	dependencies {
+		compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+		// https://mvnrepository.com/artifact/org.projectlombok/lombok
+//		compile('org.projectlombok:lombok:1.18.8')
+		annotationProcessor 'org.projectlombok:lombok:1.18.2'
+		compileOnly 'org.projectlombok:lombok:1.18.2'
+		testAnnotationProcessor 'org.projectlombok:lombok:1.18.2'
+		testCompileOnly 'org.projectlombok:lombok:1.18.2'
+
+	}
+
+}
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
+
+

@@ -1,0 +1,5 @@
+rootProject.name = 'bean'
+include 'main'
+include 'modelA'
+include 'modelB'
+
